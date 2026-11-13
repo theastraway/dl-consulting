@@ -2,544 +2,133 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Danielle &amp; Co. Consulting — Medical Operations Consultant | Practice Management for Medical Groups</title>
-<meta name="description" content="Medical operations consulting and practice management for multi-site medical groups and private practices. 12+ years running regional healthcare operations. Based in New York — serving practices anywhere.">
-<meta name="robots" content="index, follow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Medical Practice Operations Consulting | Danielle &amp; Co.</title>
+<meta name="description" content="Medical operations consulting for practices and physician groups, backed by 13+ years in healthcare operations leadership. Budgets, P&amp;L, multi-site operations, and systems that scale.">
 <link rel="canonical" href="https://daniellecoconsulting.com/">
-
-<!-- Open Graph -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="Danielle & Co. Consulting — Medical Operations Consultant">
-<meta property="og:description" content="Medical operations consulting and practice management for multi-site medical groups and private practices. 12+ years running regional healthcare operations.">
-<meta property="og:url" content="https://daniellecoconsulting.com/">
-<meta property="og:site_name" content="Danielle & Co. Consulting">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Danielle & Co. Consulting — Medical Operations Consultant">
-<meta name="twitter:description" content="Practice management and operations consulting for multi-site medical groups. 12+ years running regional healthcare operations.">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
-<style>
-  :root{
-    --ink:#16181D;
-    --ink-soft:#3A3D42;
-    --ink-faint:#6B6E74;
-    --paper:#FAF8F4;
-    --paper-soft:#F2EFE7;
-    --hairline:rgba(22,24,29,.14);
-    --hairline-on-ink:rgba(250,248,244,.22);
-    --accent:#6E2A32;
-    --accent-soft:rgba(110,42,50,.08);
-    --max:1180px;
-  }
-
-  *,*::before,*::after{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    background:var(--paper);
-    color:var(--ink-soft);
-    font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
-    font-size:17px;
-    line-height:1.7;
-    -webkit-font-smoothing:antialiased;
-  }
-  h1,h2,h3,h4{
-    font-family:'Fraunces',Georgia,serif;
-    color:var(--ink);
-    line-height:1.12;
-    letter-spacing:-.01em;
-    margin:0 0 .6em;
-    font-weight:400;
-  }
-  p{margin:0 0 1em;}
-  a{color:inherit;}
-  img{max-width:100%;display:block;}
-  .wrap{max-width:var(--max);margin:0 auto;padding:0 32px;}
-  section{padding:120px 0;}
-  hr.rule{border:none;border-top:1px solid var(--hairline);margin:0;}
-
-  .eyebrow{
-    text-transform:uppercase;
-    letter-spacing:.16em;
-    font-size:.72rem;
-    font-weight:600;
-    color:var(--accent);
-    margin-bottom:18px;
-    display:block;
-    font-family:'Inter',sans-serif;
-  }
-  .eyebrow.on-ink{color:rgba(250,248,244,.62);}
-
-  /* BUTTONS — rectangular, ink-filled or hairline, never rounded-pill */
-  .btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:10px;
-    padding:16px 32px;
-    border-radius:0;
-    font-weight:500;
-    font-size:.86rem;
-    text-transform:uppercase;
-    letter-spacing:.08em;
-    text-decoration:none;
-    cursor:pointer;
-    border:1px solid transparent;
-    transition:background .2s ease, color .2s ease, border-color .2s ease;
-    font-family:'Inter',sans-serif;
-  }
-  .btn-fill{background:var(--ink);color:var(--paper);border-color:var(--ink);}
-  .btn-fill:hover{background:#000;}
-  .btn-outline-on-ink{background:transparent;border-color:var(--hairline-on-ink);color:var(--paper);}
-  .btn-outline-on-ink:hover{border-color:var(--paper);background:rgba(250,248,244,.06);}
-  .btn-outline{background:transparent;border-color:var(--ink);color:var(--ink);}
-  .btn-outline:hover{background:var(--ink);color:var(--paper);}
-
-  /* NAV */
-  header.nav{
-    position:sticky;top:0;z-index:50;
-    background:rgba(250,248,244,.92);
-    backdrop-filter:saturate(180%) blur(10px);
-    border-bottom:1px solid var(--hairline);
-  }
-  .nav-inner{
-    max-width:var(--max);margin:0 auto;padding:22px 32px;
-    display:flex;align-items:center;justify-content:space-between;gap:16px;
-  }
-  .brand{display:flex;align-items:baseline;gap:0;text-decoration:none;color:var(--ink);}
-  .brand-text{
-    font-family:'Fraunces',serif;
-    font-weight:500;
-    font-size:1.15rem;
-    letter-spacing:-.005em;
-    color:var(--ink);
-    line-height:1.1;
-  }
-  .brand-text small{
-    display:block;
-    font-family:'Inter',sans-serif;
-    font-weight:500;
-    font-size:.62rem;
-    letter-spacing:.18em;
-    text-transform:uppercase;
-    color:var(--ink-faint);
-    margin-top:4px;
-  }
-  .nav-cta{display:flex;align-items:center;gap:28px;white-space:nowrap;}
-  .nav-login{
-    font-size:.82rem;font-weight:500;color:var(--ink-soft);text-decoration:none;
-    letter-spacing:.02em;
-    border-bottom:1px solid var(--hairline);
-    padding-bottom:2px;
-  }
-  .nav-login:hover{color:var(--accent);border-color:var(--accent);}
-
-  /* HERO */
-  .hero{
-    background:var(--ink);
-    color:var(--paper);
-    padding:150px 0 130px;
-    position:relative;
-  }
-  .hero-inner{max-width:840px;position:relative;z-index:1;}
-  .hero h1{
-    color:var(--paper);
-    font-weight:300;
-    font-size:clamp(2.4rem, 5vw, 4.1rem);
-    letter-spacing:-.015em;
-  }
-  .hero .accent-rule{
-    width:56px;height:1px;background:var(--accent);
-    margin:0 0 28px;
-  }
-  .hero p.sub{
-    font-size:1.2rem;
-    color:rgba(250,248,244,.72);
-    max-width:600px;
-    margin-bottom:44px;
-    font-weight:300;
-  }
-  .hero-ctas{display:flex;flex-wrap:wrap;gap:20px;align-items:center;}
-
-  /* TRUST BAR — numerals, no chips */
-  .trust-bar{background:var(--paper);border-bottom:1px solid var(--hairline);}
-  .trust-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:0;
-  }
-  .trust-chip{
-    padding:56px 30px;
-    border-right:1px solid var(--hairline);
-  }
-  .trust-chip:last-child{border-right:none;}
-  .trust-chip .num{
-    display:block;
-    font-family:'Fraunces',serif;
-    font-weight:400;
-    font-size:2.4rem;
-    letter-spacing:-.01em;
-    color:var(--ink);
-    margin-bottom:12px;
-  }
-  .trust-chip .label{
-    font-size:.72rem;
-    text-transform:uppercase;
-    letter-spacing:.1em;
-    color:var(--ink-faint);
-    line-height:1.5;
-  }
-
-  /* PROBLEM */
-  .problem{background:var(--paper);}
-  .problem-head{max-width:660px;margin-bottom:60px;}
-  .problem-list{
-    list-style:none;margin:0;padding:0;
-    display:grid;grid-template-columns:1fr 1fr;gap:0 56px;
-  }
-  .problem-list li{
-    display:flex;gap:20px;
-    align-items:flex-start;
-    font-size:1.04rem;
-    color:var(--ink-soft);
-    padding:26px 0;
-    border-bottom:1px solid var(--hairline);
-  }
-  .marker{
-    flex:none;
-    font-family:'Fraunces',serif;
-    color:var(--accent);
-    font-size:1rem;
-    font-weight:400;
-    margin-top:1px;
-    min-width:1.4em;
-  }
-
-  /* REFRAME */
-  .reframe{background:var(--paper-soft);}
-  .reframe-top{max-width:720px;margin-bottom:64px;}
-  .reframe-top p.lead{font-size:1.18rem;color:var(--ink-soft);font-weight:300;}
-  .steps{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:0;
-  }
-  .step{position:relative;padding:0 32px 0 0;}
-  .step:first-child{padding-left:0;}
-  .step + .step{border-left:1px solid var(--hairline);padding-left:32px;}
-  .step-num{
-    font-family:'Fraunces',serif;
-    font-size:2.6rem;
-    font-weight:300;
-    color:var(--accent);
-    line-height:1;
-    margin-bottom:20px;
-    display:block;
-  }
-  .step h3{font-size:1.08rem;margin-bottom:10px;font-weight:500;}
-  .step p{font-size:.94rem;color:var(--ink-faint);margin-bottom:0;}
-
-  /* SERVICES */
-  .services{background:var(--paper);}
-  .services-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:0;
-    border-top:1px solid var(--hairline);
-    border-left:1px solid var(--hairline);
-  }
-  .service-card{
-    background:var(--paper);
-    padding:44px 36px;
-    border-right:1px solid var(--hairline);
-    border-bottom:1px solid var(--hairline);
-  }
-  .service-icon{
-    width:38px;height:38px;
-    display:flex;align-items:center;justify-content:center;
-    margin-bottom:24px;
-  }
-  .service-icon svg{width:26px;height:26px;stroke:var(--ink);}
-  .service-card h3{font-size:1.1rem;margin-bottom:10px;font-weight:500;}
-  .service-card p{font-size:.94rem;color:var(--ink-faint);margin-bottom:0;}
-
-  /* ABOUT */
-  .about{background:var(--paper-soft);}
-  .about-grid{
-    display:grid;
-    grid-template-columns:300px 1fr;
-    gap:72px;
-    align-items:start;
-  }
-  .about-mark{
-    width:100%;
-    aspect-ratio:1/1.2;
-    border:1px solid var(--hairline);
-    background:var(--ink);
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    gap:20px;
-    padding:32px;
-  }
-  .about-mark .name{
-    font-family:'Fraunces',serif;
-    font-weight:400;
-    color:var(--paper);
-    text-align:center;
-    font-size:1.35rem;
-    line-height:1.3;
-  }
-  .about-mark .role{
-    font-family:'Inter',sans-serif;
-    color:rgba(250,248,244,.6);
-    text-align:center;
-    font-size:.7rem;
-    text-transform:uppercase;
-    letter-spacing:.14em;
-  }
-  .about-mark .rule-on-ink{width:40px;height:1px;background:var(--accent);}
-  .about-copy h2{margin-bottom:24px;}
-  .about-copy p{color:var(--ink-soft);}
-  .about-tags{
-    display:flex;flex-wrap:wrap;gap:10px;
-    margin-top:28px;
-  }
-  .about-tags span{
-    font-size:.72rem;
-    text-transform:uppercase;
-    letter-spacing:.08em;
-    padding:9px 16px;
-    border:1px solid var(--hairline);
-    color:var(--ink-faint);
-  }
-
-  /* FINAL CTA */
-  .final-cta{
-    background:var(--ink);
-    color:var(--paper);
-  }
-  .final-cta-head{max-width:660px;margin-bottom:56px;}
-  .final-cta h2{color:var(--paper);font-weight:300;}
-  .final-cta p.sub{color:rgba(250,248,244,.68);font-size:1.1rem;font-weight:300;}
-
-  .form-card{
-    background:var(--paper);
-    padding:48px;
-    color:var(--ink-soft);
-    max-width:640px;
-    border:1px solid var(--hairline-on-ink);
-  }
-  .form-row{margin-bottom:24px;}
-  .form-row label{
-    display:block;
-    font-size:.72rem;
-    font-weight:600;
-    text-transform:uppercase;
-    letter-spacing:.08em;
-    color:var(--ink);
-    margin-bottom:10px;
-  }
-  .form-row input, .form-row select{
-    width:100%;
-    padding:14px 16px;
-    border:1px solid var(--hairline);
-    border-radius:0;
-    font-family:'Inter',sans-serif;
-    font-size:.96rem;
-    color:var(--ink);
-    background:var(--paper);
-  }
-  .form-row input:focus, .form-row select:focus{
-    outline:none;
-    border-color:var(--ink);
-  }
-  .form-two{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
-  .form-submit{width:100%;margin-top:8px;}
-  .mailto-fallback{
-    display:block;
-    text-align:center;
-    margin-top:22px;
-    font-size:.85rem;
-    color:var(--ink-faint);
-  }
-  .mailto-fallback a{color:var(--ink);text-decoration:underline;text-underline-offset:3px;}
-  #thanks{
-    display:none;
-    background:var(--paper-soft);
-    border:1px solid var(--hairline);
-    color:var(--ink);
-    padding:16px 20px;
-    border-radius:0;
-    font-size:.92rem;
-    margin-bottom:24px;
-  }
-  #thanks:target{display:block;}
-
-  /* FOOTER */
-  footer{
-    background:var(--ink);
-    color:rgba(250,248,244,.6);
-    padding:56px 0;
-    font-size:.86rem;
-    border-top:1px solid var(--hairline-on-ink);
-  }
-  .footer-inner{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:space-between;
-    gap:16px;
-    align-items:center;
-  }
-  .footer-brand{
-    font-family:'Fraunces',serif;
-    font-weight:400;
-    color:var(--paper);
-    font-size:1.05rem;
-    margin-bottom:6px;
-  }
-  footer a{text-decoration:none;color:rgba(250,248,244,.78);}
-  footer a:hover{color:var(--paper);border-bottom:1px solid var(--accent);}
-  .footer-meta{color:rgba(250,248,244,.42);font-size:.78rem;letter-spacing:.02em;}
-
-  /* RESPONSIVE */
-  @media (max-width:860px){
-    section{padding:88px 0;}
-    .trust-grid{grid-template-columns:repeat(2,1fr);}
-    .trust-chip{border-right:1px solid var(--hairline);}
-    .trust-chip:nth-child(2n){border-right:none;}
-    .trust-chip:nth-child(n+3){border-top:1px solid var(--hairline);}
-    .problem-list{grid-template-columns:1fr;}
-    .steps{grid-template-columns:1fr 1fr;row-gap:44px;}
-    .step + .step{border-left:none;padding-left:0;}
-    .step:nth-child(3){border-left:1px solid var(--hairline);padding-left:32px;}
-    .services-grid{grid-template-columns:1fr 1fr;}
-    .about-grid{grid-template-columns:1fr;}
-    .about-mark{max-width:240px;margin:0 auto;}
-    .form-two{grid-template-columns:1fr;}
-  }
-  @media (max-width:600px){
-    section{padding:64px 0;}
-    .hero{padding:100px 0 72px;}
-    .trust-grid{grid-template-columns:1fr;}
-    .trust-chip{border-right:none !important;border-top:1px solid var(--hairline);padding:36px 0;}
-    .trust-chip:first-child{border-top:none;}
-    .steps{grid-template-columns:1fr;}
-    .step + .step{border-left:none !important;padding-left:0 !important;border-top:1px solid var(--hairline);padding-top:32px;margin-top:32px;}
-    .services-grid{grid-template-columns:1fr;}
-    .nav-cta{gap:16px;}
-    .nav-cta .btn{padding:12px 18px;font-size:.74rem;}
-    .brand-text{font-size:1rem;}
-    .form-card{padding:30px 22px;}
-    .footer-inner{flex-direction:column;align-items:flex-start;}
-  }
-</style>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/hero-curtain-light.jpg">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<div class="loader" aria-hidden="true"><span>Danielle &amp; Co.</span></div>
 
-<header class="nav">
-  <div class="nav-inner">
-    <a href="#top" class="brand">
-      <span class="brand-text">Danielle &amp; Co.<small>Consulting</small></span>
-    </a>
-    <div class="nav-cta">
-      <a href="https://portal.daniellecoconsulting.com" class="nav-login">Client Login</a>
-      <a href="#contact" class="btn btn-fill">Book a Free Operations Assessment</a>
+<header class="site-header" id="header">
+  <div class="wrap nav">
+    <a href="#top" class="brand">Danielle &amp; Co.<small>Consulting</small></a>
+    <nav class="nav-links" id="navlinks" aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#who">Who We Help</a>
+      <a href="#how">Approach</a>
+      <a href="#assessment">Assessment</a>
+      <a href="#about">About</a>
+      <a href="#contact-form" class="nav-cta-mobile">Book a Discovery Call</a>
+    </nav>
+    <div class="nav-right">
+      <a href="#contact-form" class="btn btn-ghost btn-sm"><span class="full">Book a Discovery Call</span><span class="short">Book a Call</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
     </div>
   </div>
 </header>
 
-<main id="top">
-
+<main>
   <!-- HERO -->
-  <section class="hero">
+  <section class="hero" id="top">
+    <div class="hero-media"><img src="img/hero-curtain-light.jpg" alt="Soft daylight through linen curtains in a calm, minimal interior" fetchpriority="high"></div>
+    <div class="hero-shade"></div>
     <div class="wrap hero-inner">
-      <span class="eyebrow on-ink">Medical Operations Consulting</span>
-      <h1>Your Practice Doesn't Need More Advice. It Needs Someone Who's Run This Before.</h1>
-      <div class="accent-rule"></div>
-      <p class="sub">12+ years running regional operations for large medical portfolios — now bringing that playbook to private practices and medical groups.</p>
-      <div class="hero-ctas">
-        <a href="#contact" class="btn btn-fill">Book a Free Operations Assessment</a>
-        <a href="#how-it-works" class="btn btn-outline-on-ink">See how it works ↓</a>
+      <span class="eyebrow gold hero-in" style="--d:.2s">Medical Operations Consulting<span class="eb-sep"> &nbsp;&middot;&nbsp; </span><span class="eb-loc">New York &amp; Nationwide</span></span>
+      <h1 class="hero-title">
+        <span class="line"><span style="--d:.35s">Well-run practices</span></span>
+        <span class="line soft"><span style="--d:.5s"><em>feel effortless.</em></span></span>
+      </h1>
+      <p class="hero-sub hero-in" style="--d:.85s">It's never an accident. We build the operations that make it so.</p>
+      <p class="hero-note hero-in" style="--d:1s">Budgets and P&amp;L, staffing and scheduling, and the systems that hold a growing practice together.</p>
+      <p class="hero-creds hero-in" style="--d:1.1s"><i>&#10022;</i>13+ years in healthcare operations leadership</p>
+      <div class="hero-ctas hero-in" style="--d:1.2s">
+        <a href="#contact-form" class="btn btn-light">Book a Discovery Call</a>
+        <a href="#assessment" class="btn btn-outline-light">Explore the 10-Point Assessment</a>
+      </div>
+    </div>
+    <a href="#marquee" class="scroll-cue" aria-label="Scroll to content"><span>Scroll</span><i></i></a>
+  </section>
+
+  <!-- MARQUEE -->
+  <section class="marquee" id="marquee" aria-label="Areas of focus">
+    <div class="marquee-track">
+      <div class="marquee-group">
+        <span>Budget Management</span><b>&#10022;</b><span>P&amp;L Leadership</span><b>&#10022;</b><span>Operational Excellence</span><b>&#10022;</b><span>Multi-Site Operations</span><b>&#10022;</b><span>Market Expansion</span><b>&#10022;</b><span>Workforce &amp; Staffing</span><b>&#10022;</b><span>Scheduling &amp; Patient Flow</span><b>&#10022;</b><span>KPI Visibility</span><b>&#10022;</b><span>Compliance</span><b>&#10022;</b><span>Systems &amp; Workflow Design</span><b>&#10022;</b><span>No-Show Reduction</span><b>&#10022;</b><span>Workforce Capacity Planning</span><b>&#10022;</b><span>Operational Intelligence</span><b>&#10022;</b><span>People-Centered Leadership</span><b>&#10022;</b>
+      </div>
+      <div class="marquee-group" aria-hidden="true">
+        <span>Budget Management</span><b>&#10022;</b><span>P&amp;L Leadership</span><b>&#10022;</b><span>Operational Excellence</span><b>&#10022;</b><span>Multi-Site Operations</span><b>&#10022;</b><span>Market Expansion</span><b>&#10022;</b><span>Workforce &amp; Staffing</span><b>&#10022;</b><span>Scheduling &amp; Patient Flow</span><b>&#10022;</b><span>KPI Visibility</span><b>&#10022;</b><span>Compliance</span><b>&#10022;</b><span>Systems &amp; Workflow Design</span><b>&#10022;</b><span>No-Show Reduction</span><b>&#10022;</b><span>Workforce Capacity Planning</span><b>&#10022;</b><span>Operational Intelligence</span><b>&#10022;</b><span>People-Centered Leadership</span><b>&#10022;</b>
       </div>
     </div>
   </section>
 
-  <!-- TRUST BAR -->
-  <section class="trust-bar" style="padding:0;">
-    <div class="wrap" style="padding:0;">
-      <div class="trust-grid">
-        <div class="trust-chip">
-          <span class="num">12+ Years</span>
-          <span class="label">In Regional Healthcare Operations</span>
-        </div>
-        <div class="trust-chip">
-          <span class="num">$10M+</span>
-          <span class="label">Monthly Revenue Portfolio Managed</span>
-        </div>
-        <div class="trust-chip">
-          <span class="num">43%</span>
-          <span class="label">Efficiency Gain Through Digital Transformation</span>
-        </div>
-        <div class="trust-chip">
-          <span class="num">Multi-Site</span>
-          <span class="label">Portfolio Leadership, incl. Forefront Dermatology</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROBLEM -->
-  <section class="problem" id="problem">
+  <!-- CAPABILITY STRIP -->
+  <section class="proof caps-strip" aria-label="What we bring">
     <div class="wrap">
-      <div class="problem-head">
-        <span class="eyebrow">Sound Familiar?</span>
-        <h2>You've tried to fix it yourself. It keeps coming back.</h2>
+      <p class="caps-intro reveal">What changes when the operation is built well.</p>
+      <div class="proof-grid">
+      <div class="proof-item proof-word reveal"><span class="proof-num"><em>Clarity</em></span><span class="proof-unit">Budget &amp; P&amp;L</span><span class="proof-label">Budgets built, tracked, and owned, so every decision has a number behind it.</span></div>
+      <div class="proof-item proof-word reveal" style="--d:.12s"><span class="proof-num"><em>Consistency</em></span><span class="proof-unit">Multi-site operations</span><span class="proof-label">One operating standard, from your first location to your next.</span></div>
+      <div class="proof-item proof-word reveal" style="--d:.24s"><span class="proof-num"><em>Capacity</em></span><span class="proof-unit">Scheduling &amp; patient flow</span><span class="proof-label">Confirmations, reminders, and waitlist backfill that keep the schedule full and the day on time.</span></div>
+      <div class="proof-item proof-word reveal" style="--d:.36s"><span class="proof-num"><em>Momentum</em></span><span class="proof-unit">Market expansion</span><span class="proof-label">New locations opened on a playbook, not from scratch.</span></div>
       </div>
-      <ul class="problem-list">
-        <li><span class="marker">01</span><span>Staffing churn — and no time to actually fix it.</span></li>
-        <li><span class="marker">02</span><span>Every location runs it a little differently.</span></li>
-        <li><span class="marker">03</span><span>Scheduling chaos that quietly leaks revenue.</span></li>
-        <li><span class="marker">04</span><span>You've tried the templates, the software settings, the staff meetings — and the problem keeps coming back.</span></li>
-        <li><span class="marker">05</span><span>Opening a new location feels like starting from zero, every time.</span></li>
-      </ul>
     </div>
   </section>
 
-  <!-- REFRAME / HOW IT WORKS -->
-  <section class="reframe" id="how-it-works">
+  <!-- MODERN PRACTICE TRIPTYCH -->
+  <section class="tri" aria-label="The modern practice">
     <div class="wrap">
-      <div class="reframe-top">
-        <span class="eyebrow">A Different Kind of Consultant</span>
-        <h2>Most consultants hand you a report. Danielle implements.</h2>
-        <p class="lead">You don't need another 40-page deck. You need someone who has actually run multi-site operations, sat in the chair, and built the playbook — then rolled up their sleeves to put it in place.</p>
+      <div class="tri-head">
+        <span class="eyebrow reveal">The Modern Practice</span>
+        <h2 class="reveal" style="--d:.1s">Technology that serves the day, <em>not the other way around.</em></h2>
       </div>
-      <div class="steps">
-        <div class="step">
-          <span class="step-num">01</span>
-          <h3>Assess</h3>
-          <p>A clear-eyed look at where time and revenue are actually leaking across your operation.</p>
-        </div>
-        <div class="step">
-          <span class="step-num">02</span>
-          <h3>Plan</h3>
-          <p>A prioritized, practical roadmap built around your team and your locations — not a generic template.</p>
-        </div>
-        <div class="step">
-          <span class="step-num">03</span>
-          <h3>Implement</h3>
-          <p>Hands-on execution alongside your staff, so the changes actually stick day to day.</p>
-        </div>
-        <div class="step">
-          <span class="step-num">04</span>
-          <h3>Support</h3>
-          <p>Ongoing partnership to refine, standardize, and scale as your practice grows.</p>
-        </div>
+      <div class="tri-grid">
+        <figure class="tri-item reveal"><div class="tri-img"><img data-parallax="0.06" src="img/tech-device-minimal.jpg" alt="A sleek white medical device on a clean white surface" loading="lazy"></div><figcaption><span>01</span>Systems that work for providers</figcaption></figure>
+        <figure class="tri-item tri-mid reveal" style="--d:.12s"><div class="tri-img"><img data-parallax="0.1" src="img/flasks-white-flowers.jpg" alt="White flowers in glass laboratory flasks against a soft grey wall" loading="lazy"></div><figcaption><span>02</span>Standards every location keeps</figcaption></figure>
+        <figure class="tri-item reveal" style="--d:.24s"><div class="tri-img"><img data-parallax="0.06" src="img/dashboard-laptop.jpg" alt="A laptop showing an analytics dashboard in a bright room" loading="lazy"></div><figcaption><span>03</span>Numbers leaders can act on</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEMS -->
+  <section class="problems" id="problems">
+    <div class="wrap problems-grid">
+      <div class="problems-media">
+        <div class="pmask reveal-img"><img data-parallax="0.12" src="img/sconce-shadow-wall.jpg" alt="Afternoon light and shadow across a plaster wall" loading="lazy"></div>
+        <div class="pcaption reveal" style="--d:.3s"><span class="eyebrow">Sound familiar?</span><p>Growth multiplies whatever system you already have.</p></div>
+      </div>
+      <div class="problems-copy">
+        <span class="eyebrow reveal">What We Fix</span>
+        <h2 class="reveal" style="--d:.1s">Your practice has outgrown <em>the way it runs.</em></h2>
+        <div class="rule reveal" style="--d:.2s"></div>
+        <ul class="problem-list">
+          <li class="reveal"><span class="n">01</span><span>Every location does it a little differently, and no one can say which way is right.</span></li>
+          <li class="reveal" style="--d:.08s"><span class="n">02</span><span>The schedule looks full at 8 a.m. By noon, cancellations and no-shows have opened gaps no one could fill.</span></li>
+          <li class="reveal" style="--d:.16s"><span class="n">03</span><span>A clinic is short-staffed, providers are charting late into the evening, and the team is running on goodwill.</span></li>
+          <li class="reveal" style="--d:.24s"><span class="n">04</span><span>You've tried new software, new templates, and more staff meetings. The problem comes back.</span></li>
+          <li class="reveal" style="--d:.32s"><span class="n">05</span><span>Opening another location feels like starting from zero.</span></li>
+          <li class="reveal" style="--d:.4s"><span class="n">06</span><span>The numbers arrive weeks late, and by then the month is already decided.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFFERENCE (dark) -->
+  <section class="difference">
+    <div class="diff-bg"><video class="bg-video" data-parallax="0.18" muted loop playsinline preload="none" poster="img/tech-ultrasound-room-poster.jpg" aria-hidden="true"><source src="img/tech-ultrasound-room.mp4" type="video/mp4"></video></div>
+    <div class="wrap diff-grid">
+      <div>
+        <span class="eyebrow gold reveal">Deliberately Boutique</span>
+        <h2 class="reveal" style="--d:.1s">Most consultants hand you a report. <em>We stay for the build.</em></h2>
+      </div>
+      <div class="diff-copy">
+        <p class="reveal" style="--d:.2s">We take on a small number of practices at a time, so each one has our full attention. You work directly with Danielle, from the first conversation to the last rollout.</p>
+        <p class="reveal" style="--d:.3s">The work is practical: the budget that finally makes sense, the schedule that stops running late, the standard every location follows. Built alongside your team, and measured until it holds.</p>
+        <a href="#about" class="link-arrow reveal" style="--d:.4s">Meet Danielle <span>&rarr;</span></a>
       </div>
     </div>
   </section>
@@ -547,45 +136,111 @@
   <!-- SERVICES -->
   <section class="services" id="services">
     <div class="wrap">
-      <div class="reframe-top" style="margin-bottom:56px;">
-        <span class="eyebrow">Where We Focus</span>
-        <h2>Five pillars. One operating playbook.</h2>
+      <div class="section-head">
+        <div><span class="eyebrow reveal">Consulting Services</span>
+        <h2 class="reveal" style="--d:.1s">Four ways <em>to work together.</em></h2></div>
+        <p class="reveal" style="--d:.2s">Four engagements, because a plan nobody implements is only a document, and a system nobody measures quietly drifts back.</p>
       </div>
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M21 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          </div>
-          <h3>Staffing &amp; Team Management</h3>
-          <p>Reduce turnover and rebuild consistent coverage, so your team stops running on empty.</p>
+      <div class="cards">
+        <article class="card reveal">
+          <div class="card-img"><img src="img/hands-notebook.jpg" alt="Hands writing notes in a spiral notebook" loading="lazy"></div>
+          <div class="card-body"><span class="num">I.</span><h3>Strategy Intensive</h3><p class="promise">One focused session on the problem costing you the most, and a written plan to fix it.</p><p class="skills">Priority diagnosis &middot; Action planning &middot; Quick wins &middot; Leadership alignment</p><span class="meta">Half day &middot; Virtual</span><a class="card-more" href="#contact-form" data-interest="Strategy Intensive">Learn more &rarr;</a></div>
+        </article>
+        <article class="card featured reveal" style="--d:.1s">
+          <div class="card-img"><img src="img/calm-clinic-room.jpg" alt="A calm, minimal clinical examination room" loading="lazy"><span class="tag">Where most clients begin</span></div>
+          <div class="card-body"><span class="num">II.</span><h3>Practice Operations Assessment</h3><p class="promise">A clear read on where time and revenue are leaking, ranked by what to fix first.</p><p class="skills">Scheduling &amp; patient flow &middot; No-show &amp; cancellation review &middot; Staffing &amp; capacity models &middot; Workflow review &middot; KPI baseline &middot; Compliance readiness &middot; 30/60/90-day plan</p><span class="meta">2&ndash;4 weeks &middot; Fixed fee</span><a class="card-more" href="#contact-form" data-interest="Practice Operations Assessment">Learn more &rarr;</a></div>
+        </article>
+        <article class="card reveal" style="--d:.2s">
+          <div class="card-img"><img src="img/clinic-cabinet.jpg" alt="An orderly, bright clinic supply cabinet" loading="lazy"></div>
+          <div class="card-body"><span class="num">III.</span><h3>Systems Implementation</h3><p class="promise">The fixes, built and rolled out with your team, so they hold after we step back.</p><p class="skills">Automated confirmations &amp; reminders &middot; Waitlist backfill &middot; AI-assisted documentation &middot; Multi-site standards &middot; SOPs &amp; training &middot; Systems &amp; workflow design &middot; Expansion playbooks</p><span class="meta">8&ndash;16 weeks &middot; Fixed scope</span><a class="card-more" href="#contact-form" data-interest="Systems Implementation">Learn more &rarr;</a></div>
+        </article>
+        <article class="card reveal" style="--d:.3s">
+          <div class="card-img"><img src="img/arch-interior.jpg" alt="A quiet arched interior with a beige armchair" loading="lazy"></div>
+          <div class="card-body"><span class="num">IV.</span><h3>Fractional Operations Leadership</h3><p class="promise">Senior operations leadership on your team, without a full-time executive hire.</p><p class="skills">Budget management &middot; P&amp;L oversight &middot; Workforce capacity planning &middot; Power BI &amp; SSRS dashboards &middot; KPI scorecards &middot; People-centered leadership</p><span class="meta">Monthly retainer</span><a class="card-more" href="#contact-form" data-interest="Fractional Operations Leadership">Learn more &rarr;</a></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATEMENT BAND -->
+  <section class="statement">
+    <div class="statement-bg"><video class="bg-video" data-parallax="0.25" muted loop playsinline preload="none" poster="img/gold-bokeh-lights-poster.jpg" aria-hidden="true"><source src="img/gold-bokeh-lights.mp4" type="video/mp4"></video></div>
+    <div class="wrap">
+      <p class="statement-text reveal">These aren't people problems. They're <em>system problems,</em> and systems can be rebuilt.</p>
+    </div>
+  </section>
+
+  <!-- HOW -->
+  <section class="how" id="how">
+    <div class="wrap">
+      <div class="section-head">
+        <div><span class="eyebrow reveal">Our Approach</span>
+        <h2 class="reveal" style="--d:.1s">A clear path from <em>diagnosis to discipline.</em></h2></div>
+        <p class="approach-line reveal" style="--d:.2s">We don't just identify operational problems. We build the systems, teams, and strategies that <em>solve them.</em></p>
+      </div>
+      <div class="steps" id="steps">
+        <div class="steps-line"><i></i></div>
+        <div class="step reveal"><span class="dot"></span><span class="n">01</span><h3>Assess</h3><p>A structured review of how your practice actually runs: scheduling, patient flow, staffing, workflows, and reporting.</p></div>
+        <div class="step reveal" style="--d:.12s"><span class="dot"></span><span class="n">02</span><h3>Design</h3><p>A practical roadmap, plus the playbooks, roles, and KPIs to support it, built for your team and your locations.</p></div>
+        <div class="step reveal" style="--d:.24s"><span class="dot"></span><span class="n">03</span><h3>Implement</h3><p>A hands-on rollout with your staff, so new workflows are trained, adopted, and measured.</p></div>
+        <div class="step reveal" style="--d:.36s"><span class="dot"></span><span class="n">04</span><h3>Lead</h3><p>Live dashboards, KPI scorecards, monthly performance reviews, and budget and P&amp;L oversight that scale what works.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO -->
+  <section class="who" id="who">
+    <div class="wrap who-grid">
+      <div class="who-copy">
+        <span class="eyebrow reveal">Who We Help</span>
+        <h2 class="reveal" style="--d:.1s">Built for practices growing <em>faster than their systems.</em></h2>
+        <div class="who-list">
+          <div class="who-item reveal"><h3>Independent Practices</h3><p>Owner-led practices ready to step out of daily firefighting.</p></div>
+          <div class="who-item reveal" style="--d:.08s"><h3>Physician Groups</h3><p>Groups that need consistent operations across providers and teams.</p></div>
+          <div class="who-item reveal" style="--d:.16s"><h3>Specialty Practices</h3><p>Dermatology, aesthetics, and other specialty organizations with high-volume scheduling and patient flow.</p></div>
+          <div class="who-item reveal" style="--d:.24s"><h3>Multi-Location Organizations</h3><p>Groups expanding into new markets that need one operating standard, one KPI scorecard, and clear P&amp;L accountability.</p></div>
         </div>
-        <div class="service-card">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-          </div>
-          <h3>Scheduling &amp; Patient Flow</h3>
-          <p>Tighten scheduling and patient flow to recover the revenue that chaos quietly costs you.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-          </div>
-          <h3>Workflow Standardization &amp; Playbooks</h3>
-          <p>Turn "how we do it here" into a documented playbook every location can actually follow.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg>
-          </div>
-          <h3>Multi-Site Operations &amp; New Office Openings</h3>
-          <p>Bring every location onto one standard, and open new sites without starting from zero.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg>
-          </div>
-          <h3>Performance &amp; Budget Optimization</h3>
-          <p>Clear metrics and disciplined budgeting so leadership sees exactly where the business stands.</p>
+      </div>
+      <div class="who-media">
+        <div class="wmask reveal-img"><img data-parallax="0.1" src="img/sunlit-chair-detail.jpg" alt="Warm sunlight across a modern chair and a coffee cup" loading="lazy"></div>
+        <div class="gold-frame"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ASSESSMENT (interactive, dark) -->
+  <section class="assess" id="assessment">
+    <div class="wrap">
+      <div class="assess-head">
+        <span class="eyebrow gold reveal">Free Resource</span>
+        <h2 class="reveal" style="--d:.1s">The 10-Point Medical Practice <em>Operations Assessment.</em></h2>
+        <p class="reveal" style="--d:.2s">A self-scored checklist across scheduling, patient flow, staffing, workflows, reporting, and compliance readiness. Select each point to see what it asks.</p>
+      </div>
+      <div class="assess-grid reveal" style="--d:.25s">
+        <ol class="assess-list" role="tablist" aria-label="Assessment points">
+          <li><button role="tab" aria-selected="true" data-i="0"><span>01</span>Scheduling &amp; provider capacity</button></li>
+          <li><button role="tab" aria-selected="false" data-i="1"><span>02</span>No-shows &amp; cancellations</button></li>
+          <li><button role="tab" aria-selected="false" data-i="2"><span>03</span>Front-desk handoffs</button></li>
+          <li><button role="tab" aria-selected="false" data-i="3"><span>04</span>Patient flow</button></li>
+          <li><button role="tab" aria-selected="false" data-i="4"><span>05</span>Staffing &amp; workforce capacity</button></li>
+          <li><button role="tab" aria-selected="false" data-i="5"><span>06</span>Hiring, onboarding &amp; training</button></li>
+          <li><button role="tab" aria-selected="false" data-i="6"><span>07</span>Standard operating procedures</button></li>
+          <li><button role="tab" aria-selected="false" data-i="7"><span>08</span>KPIs &amp; operational intelligence</button></li>
+          <li><button role="tab" aria-selected="false" data-i="8"><span>09</span>Technology &amp; documentation</button></li>
+          <li><button role="tab" aria-selected="false" data-i="9"><span>10</span>Compliance &amp; accountability</button></li>
+        </ol>
+        <div class="assess-panel" role="tabpanel" aria-live="polite">
+          <span class="ap-num" id="apNum">01</span>
+          <h3 id="apTitle">Scheduling &amp; provider capacity</h3>
+          <div class="rule gold-rule"></div>
+          <p class="ap-q" id="apQ">Do your schedule templates match how each provider actually works, and can you see open capacity before the day starts?</p>
+          <p class="ap-why" id="apWhy">What we look at: template design, visit lengths, block rules, and how quickly cancellations get backfilled.</p>
+          <div class="ap-progress"><i id="apBar"></i></div>
+          <form class="ap-form" id="assessForm" action="mailto:daniellelamb20202@gmail.com?subject=10-Point%20Assessment%20Request" method="post" enctype="text/plain">
+            <input type="email" name="email" required placeholder="Work email" aria-label="Work email">
+            <button class="btn btn-gold" type="submit">Send Me the Assessment</button>
+          </form>
+          <p class="fine">This opens a pre-filled email to Danielle requesting the assessment. We'll send it, plus an occasional operations insight. Unsubscribe anytime.</p>
         </div>
       </div>
     </div>
@@ -594,96 +249,93 @@
   <!-- ABOUT -->
   <section class="about" id="about">
     <div class="wrap about-grid">
-      <div class="about-mark" aria-hidden="true">
-        <span class="rule-on-ink"></span>
-        <span class="name">Danielle Lamb</span>
-        <span class="role">Medical Operations Consultant</span>
+      <div class="about-visual">
+        <div class="portrait has-photo reveal-img"><img src="img/danielle-lamb-portrait.jpg" alt="Danielle Lamb, founder of Danielle &amp; Co. Consulting" width="600" height="600" loading="lazy"></div>
+        <div class="about-inset reveal" style="--d:.35s"><img data-parallax="-0.08" src="img/gallery-wall.jpg" alt="" loading="lazy"></div>
       </div>
       <div class="about-copy">
-        <span class="eyebrow">About Danielle</span>
-        <h2>Twelve years in the chair, not just in the report.</h2>
-        <p>Danielle has spent 12+ years in regional operations leadership for large medical portfolios, including Forefront Dermatology — managing and optimizing a $10M+ monthly revenue portfolio across multiple sites.</p>
-        <p>She led the digital transformation initiative that moved operations to paperless systems, increasing efficiency by 43% while reducing labor demands across the portfolio. That work required real change management: aligning physicians, front-desk staff, billing teams, and site leaders around one new way of working — and making it stick.</p>
-        <p>Danielle also brings deep working knowledge of the compliance and regulatory demands of multi-site clinical settings, gained from years operating inside them.</p>
-        <p>She's based in New York and works with practices anywhere, remote or hybrid.</p>
-        <div class="about-tags">
-          <span>JIRA</span>
-          <span>Trello</span>
-          <span>Smartsheets</span>
-          <span>SharePoint</span>
+        <span class="eyebrow reveal">Meet Danielle</span>
+        <h2 class="reveal" style="--d:.1s">An operator <em>first.</em></h2>
+        <div class="rule reveal" style="--d:.2s"></div>
+        <p class="reveal" style="--d:.25s">Danielle Lamb brings 13+ years in healthcare operations leadership to every engagement. Her work centers on the parts of a practice that decide whether it scales: budgets and P&amp;L, multi-site operations, staffing and scheduling, and the systems that tie them together.</p>
+        <p class="reveal" style="--d:.3s">She has directed operational performance across a multi-site portfolio of more than $15M in revenue, and she leads with people in mind: clear accountability, engaged teams, and workloads people can sustain. Her focus is simple: build systems people can follow, and leaders can measure.</p>
+        <div class="caps reveal" style="--d:.35s"><span>Budget Management</span><span>P&amp;L Leadership</span><span>Multi-Site Operations</span><span>Market Expansion</span><span>Workforce &amp; Staffing</span><span>Workforce Capacity Planning</span><span>Operational Intelligence</span><span>Systems &amp; Workflow Design</span><span>People-Centered Leadership</span></div>
+        <a href="#contact-form" class="link-arrow dark reveal" style="--d:.4s">Book a call with Danielle <span>&rarr;</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="wrap faq-grid">
+      <div><span class="eyebrow reveal">Questions</span><h2 class="reveal" style="--d:.1s">Frequently <em>asked.</em></h2></div>
+      <div class="faq-list">
+        <details class="reveal" open><summary>Do you replace my practice manager?<i></i></summary><div class="ans"><p>No. We strengthen your manager and team with clear systems, KPIs, and support, so the improvements hold after we step back.</p></div></details>
+        <details class="reveal"><summary>Can you help with budgets and P&amp;L, not just workflows?<i></i></summary><div class="ans"><p>Yes. Budget management and P&amp;L leadership sit at the center of Danielle's experience. We connect every operational fix to the numbers: budget targets, variance, and the return on growth initiatives.</p></div></details>
+        <details class="reveal"><summary>Can you help with no-shows and cancellations?<i></i></summary><div class="ans"><p>Yes. We look at how appointments are confirmed, how patients are reminded, and how quickly an open slot gets backfilled from a waitlist. Then we build a process that protects schedule integrity, using the systems you already have wherever we can.</p></div></details>
+        <details class="reveal"><summary>What if a clinic is short-staffed right now?<i></i></summary><div class="ans"><p>We start with workforce capacity planning: matching staffing to patient demand and provider schedules, and setting coverage rules for the gaps. Where documentation is the bottleneck, we help you evaluate and roll out AI-assisted documentation so providers can keep seeing patients.</p></div></details>
+        <details class="reveal"><summary>What does reporting look like?<i></i></summary><div class="ans"><p>A small set of KPIs your leaders review on a set schedule, built into dashboards in tools like Power BI and SSRS, and turned into clear recommendations, not just charts.</p></div></details>
+        <details class="reveal"><summary>Do you work remotely?<i></i></summary><div class="ans"><p>Yes. Most work is remote, with on-site visits when a rollout calls for it.</p></div></details>
+        <details class="reveal"><summary>What size practices do you work with?<i></i></summary><div class="ans"><p>Independent practices, physician groups, and multi-location organizations that are feeling the strain of growth.</p></div></details>
+        <details class="reveal"><summary>How do engagements start?<i></i></summary><div class="ans"><p>With a free 30-minute discovery call. If there's a fit, most clients begin with the Practice Operations Assessment.</p></div></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final" id="contact">
+    <div class="final-bg"><img data-parallax="0.2" src="img/sunlight-dark-room.jpg" alt="" loading="lazy"></div>
+    <div class="wrap final-inner">
+      <span class="eyebrow gold reveal">Let's Look at Your Operation</span>
+      <h2 class="reveal" style="--d:.1s">Start with a conversation about <em>where your practice is headed.</em></h2>
+      <p class="reveal" style="--d:.2s">Book a free 30-minute discovery call. Tell us what's happening, and Danielle will give you an honest read on where she'd start, and whether we're the right fit.</p>
+      <div class="hero-ctas reveal" style="--d:.3s"><a href="#contact-form" class="btn btn-light">Book a Discovery Call</a><a href="#assessment" class="btn btn-outline-light">Get the Assessment</a></div>
+
+      <!-- CONTACT FORM. Active version: no account needed. It composes an email to Danielle in the visitor's mail app (see main.js).
+           Switch to FormSubmit.co later: replace the opening <form ...> tag below with the commented one, uncomment the hidden
+           fields, and remove id="contactForm" handling in main.js. FormSubmit needs a one-time activation: the first real submission
+           sends Danielle an activation email at daniellelamb20202@gmail.com that she must click.
+      <form class="contact-form reveal" id="contact-form" action="https://formsubmit.co/daniellelamb20202@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New Discovery Call Request, Danielle &amp; Co. website">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="true">
+        <input type="hidden" name="_next" value="https://daniellecoconsulting.com/#contact">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+      -->
+      <form class="contact-form reveal" id="contact-form" style="--d:.35s" action="mailto:daniellelamb20202@gmail.com?subject=Discovery%20Call%20Request" method="post" enctype="text/plain">
+        <div class="cf-row">
+          <label><span>Name</span><input type="text" name="name" required autocomplete="name"></label>
+          <label><span>Email</span><input type="email" name="email" required autocomplete="email"></label>
         </div>
-      </div>
+        <div class="cf-row">
+          <label><span>Practice</span><input type="text" name="practice" autocomplete="organization"></label>
+          <label><span>Interested in</span><select name="interest">
+            <option>Discovery Call</option><option>Strategy Intensive</option><option>Practice Operations Assessment</option><option>Systems Implementation</option><option>Fractional Operations Leadership</option><option>10-Point Assessment</option>
+          </select></label>
+        </div>
+        <label class="cf-full"><span>What's happening in your practice?</span><textarea name="message" rows="4"></textarea></label>
+        <input type="text" name="website" class="cf-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="btn btn-light" type="submit">Send to Danielle</button>
+        <p class="cf-note">Opens a pre-filled email to <a href="mailto:daniellelamb20202@gmail.com?subject=Discovery%20Call%20Request">daniellelamb20202@gmail.com</a>. Prefer to write directly? That works too.</p>
+      </form>
     </div>
   </section>
-
-  <!-- FINAL CTA + FORM -->
-  <section class="final-cta" id="contact">
-    <div class="wrap">
-      <div class="final-cta-head">
-        <span class="eyebrow on-ink">Let's Look At Your Operation</span>
-        <h2>See where your practice is leaking time and revenue.</h2>
-        <p class="sub">A free, no-pressure operations assessment. Tell us a bit about your practice and Danielle will follow up personally.</p>
-      </div>
-
-      <div class="form-card">
-        <div id="thanks">Thank you — Danielle will reach out within one business day.</div>
-
-        <form action="https://formsubmit.co/daniellelamb20202@gmail.com" method="POST">
-          <input type="hidden" name="_subject" value="New consultation request — daniellecoconsulting.com">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_next" value="https://daniellecoconsulting.com/#thanks">
-
-          <div class="form-two">
-            <div class="form-row">
-              <label for="name">Name</label>
-              <input type="text" id="name" name="Name" required autocomplete="name">
-            </div>
-            <div class="form-row">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="Email" required autocomplete="email">
-            </div>
-          </div>
-
-          <div class="form-row">
-            <label for="practice">Practice name &amp; role</label>
-            <input type="text" id="practice" name="Practice name and role" placeholder="e.g. Riverside Family Medicine — Office Manager" required>
-          </div>
-
-          <div class="form-row">
-            <label for="challenge">Biggest challenge right now</label>
-            <select id="challenge" name="Biggest challenge" required>
-              <option value="" disabled selected>Select one…</option>
-              <option value="Staffing & turnover">Staffing &amp; turnover</option>
-              <option value="Scheduling & patient flow">Scheduling &amp; patient flow</option>
-              <option value="Inconsistency across locations">Inconsistency across locations</option>
-              <option value="Opening a new location">Opening a new location</option>
-              <option value="Revenue & efficiency">Revenue &amp; efficiency</option>
-              <option value="Something else">Something else</option>
-            </select>
-          </div>
-
-          <button type="submit" class="btn btn-fill form-submit">Book a Free Operations Assessment</button>
-        </form>
-
-        <span class="mailto-fallback">Prefer email? Reach out directly at <a href="mailto:daniellelamb20202@gmail.com">daniellelamb20202@gmail.com</a></span>
-      </div>
-    </div>
-  </section>
-
 </main>
 
 <footer>
-  <div class="wrap footer-inner">
-    <div>
-      <div class="footer-brand">Danielle &amp; Co. Consulting</div>
-      <div class="footer-meta">Medical Operations Consulting · New York, NY</div>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="brand big">Danielle &amp; Co.<small>Consulting</small></div>
+      <p>Medical operations consulting for independent practices, physician groups, and multi-location medical organizations. New York, NY &middot; Working nationwide.</p>
     </div>
-    <div>
-      <a href="mailto:daniellelamb20202@gmail.com">daniellelamb20202@gmail.com</a>
+    <div class="foot-grid">
+      <div><h5>Explore</h5><ul><li><a href="#services">Services</a></li><li><a href="#who">Who We Help</a></li><li><a href="#how">Approach</a></li><li><a href="#about">About Danielle</a></li></ul></div>
+      <div><h5>Resources</h5><ul><li><a href="#assessment">The 10-Point Assessment</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+      <div><h5>Connect</h5><ul><li><a href="mailto:daniellelamb20202@gmail.com?subject=Website%20Inquiry">daniellelamb20202@gmail.com</a></li><li><a href="#contact-form">Book a Discovery Call</a></li><li><a href="https://portal.daniellecoconsulting.com">Client Login</a></li><!-- Add LinkedIn and Instagram here once the company profile URLs are confirmed. --></ul></div>
     </div>
-    <div class="footer-meta">© 2026 Danielle &amp; Co. Consulting</div>
+    <div class="foot-bottom"><span>&copy; 2026 Danielle &amp; Co. Consulting</span><span>Privacy &middot; Terms</span></div>
   </div>
 </footer>
-
+<script src="main.js"></script>
 </body>
 </html>
