@@ -6,17 +6,18 @@ No photo shows a person's face. No image depicts Danielle or any client. The Abo
 | Local file | Used in | Photographer | Source |
 |---|---|---|---|
 | img/hero-curtain-light.jpg | Not used since v4 (kept as an alternate hero) | Julia Khalimova | https://www.pexels.com/photo/white-floor-lamp-beside-a-curtain-4003788/ |
-| img/sconce-shadow-wall.jpg | "Your practice has outgrown…" (parallax) | Jennelope | https://www.pexels.com/photo/minimalist-light-and-shadow-on-wall-architecture-38660121/ |
+| img/growth-branch-vase.jpg | What We Fix (parallax, "Growth multiplies..." card), v4 r4 | Tara Winstead | https://www.pexels.com/photo/plate-wood-plant-kitchen-6692146/ |
 | img/hands-notebook.jpg | Service card I (hands only, no face) | Artem Podrez | https://www.pexels.com/photo/a-person-writing-on-a-notepad-6779632/ |
 | img/calm-clinic-room.jpg | Service card II | Ivan Babydov | https://www.pexels.com/photo/special-medical-bed-desk-and-chairs-in-medical-cabinet-7789616/ |
 | img/clinic-cabinet.jpg | Service card III | Plato Terentev | https://www.pexels.com/photo/empty-white-cabinet-with-medical-equipment-5827294/ |
 | img/arch-interior.jpg | Service card IV | Ksenia Chernaya | https://www.pexels.com/photo/minimalistic-interior-design-6615806/ |
-| img/sunlit-chair-detail.jpg | Who We Help (parallax) | Letícia Alvares | https://www.pexels.com/photo/minimalist-sunlit-coffee-moment-in-modern-setting-35962922/ |
+| img/desk-planner-calm.jpg | Who We Help (parallax), v4 r4 (people-free; portrait crop, warmed and softened) | Kaboompics (Karolina Grabowska) | https://www.pexels.com/photo/laptop-on-a-desk-8092412/ |
 | img/flasks-white-flowers.jpg | "Technology & Data" triptych, 02 (warm grade, cropped) | Ron Lach | https://www.pexels.com/photo/flowers-in-glass-flasks-on-grey-background-10181428/ |
 | img/dashboard-laptop.jpg | "Technology & Data" triptych, 03 (warm grade, cropped) | Lukas Blazek | https://www.pexels.com/photo/close-up-photo-of-gray-laptop-577210/ |
 | img/sunlight-dark-room.jpg | Final CTA background (parallax) | Dmitry Alexandrovich | https://www.pexels.com/photo/sunlight-on-the-wall-12121995/ |
 | img/analytics-laptop-soft.jpg | "Technology & Data" triptych, 01 (cropped, warm grade), v4 r2 | Negative Space | https://www.pexels.com/photo/marketing-iphone-smartphone-notebook-34069/ |
 | img/hero-sunlit-plant.jpg | Hero (Ken Burns), v4 | Yeşim Çolak | https://www.pexels.com/photo/sunlit-houseplant-and-shadow-play-in-istanbul-31024983/ |
+| img/hero-sculptural-vase.jpg | Hero, v5 (AI-edited from the photo above, vase replaced) | Yeşim Çolak (base photo) | https://www.pexels.com/photo/sunlit-houseplant-and-shadow-play-in-istanbul-31024983/ |
 | img/wellbeing-monstera-light.jpg | Culture & Wellbeing section (parallax), v4 | peri ✨ | https://www.pexels.com/photo/sunlit-monstera-plant-with-leaf-shadows-34676361/ |
 | img/palm-shadow-wall.jpg | Service card V, Culture & Wellbeing Program (desaturated), v4 | Kaboompics | https://www.pexels.com/photo/plant-leaves-shadow-on-wall-6793893/ |
 
@@ -38,9 +39,9 @@ Total media weight (img/): about 3.1 MB including both videos.
 
 | Local file | Used in | Source | License |
 |---|---|---|---|
-| audio/ambient-528hz-loop.mp3 | Ambient sound (soft auto-start, mute toggle bottom-left) | Original composition generated for Danielle & Co. on 2026-11-13 with Python/NumPy (layered soft sine tones rooted at 528 Hz with 132/198/264/396/792 Hz partials, slow swells, faint air texture), encoded with ffmpeg/LAME at 128 kbps. 150-second seamless loop. | Original work made for this site; no third-party samples or music. Owned by Danielle & Co. |
+| audio/clean-soul-loop.mp3 | Ambient sound (soft auto-start, fades out by the third section; mute toggle bottom-left) | "Clean Soul" by Kevin MacLeod (incompetech.com), https://incompetech.com/music/royalty-free/mp3-royaltyfree/Clean%20Soul.mp3. Trimmed to a 2:50 loop with a 6-second crossfade, peak-normalized to about -14 dBFS, 160 kbps MP3. | Creative Commons Attribution 4.0 (https://creativecommons.org/licenses/by/4.0/). Credit shown in the site footer: "Clean Soul" Kevin MacLeod (incompetech.com), Licensed under Creative Commons: By Attribution 4.0. |
 
-The site makes no health or healing claims about the audio; it is described only as ambient sound.
+The site makes no health or healing claims about the audio; it is described only as ambient sound. Earlier original synthesized tracks (528 Hz, 432 Hz) are no longer used.
 
 ## Code
 

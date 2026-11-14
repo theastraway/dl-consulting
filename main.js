@@ -56,36 +56,6 @@
     window.addEventListener('resize', update); update();
   }
 
-  // 10-point assessment
-  var pts = [
-    ['Scheduling & provider capacity','Do your schedule templates match how each provider actually works, and can you see open capacity before the day starts?','What we look at: template design, visit lengths, block rules, and how quickly cancellations get backfilled.'],
-    ['No-shows & cancellations','When a patient cancels or doesn\u2019t show, does the slot sit empty, or is it filled before the day starts?','What we look at: automated confirmations and reminders, waitlist backfill, cancellation policies, and schedule integrity.'],
-    ['Front-desk handoffs','Does information move cleanly from scheduling to check-in to the clinical team to checkout?','What we look at: intake, eligibility checks, collections at the desk, and where details get re-entered.'],
-    ['Patient flow','Does the day run on time, or does the schedule slide by mid-morning?','What we look at: room turnover, rooming steps, provider wait time, and the bottlenecks that repeat.'],
-    ['Staffing & workforce capacity','When a clinic is short-staffed, is there a plan that keeps providers seeing patients?','What we look at: staffing against patient demand and provider schedules, coverage rules, cross-training, and documentation support, including AI-assisted documentation.'],
-    ['Hiring, onboarding & training','Can a new hire learn the job from a system, or only from the person sitting next to them?','What we look at: role descriptions, onboarding checklists, training materials, and ramp time.'],
-    ['Standard operating procedures','Is there one written way to do the work, and does every location follow it?','What we look at: SOP coverage, version control, and how much each site improvises.'],
-    ['KPIs & operational intelligence','Do leaders see the same handful of numbers on a set schedule, and act on them while it still matters?','What we look at: the scorecard, dashboards and data sources, review cadence, and who owns each metric.'],
-    ['Technology & documentation','Do your systems remove steps, or add them?','What we look at: EMR and practice management use, documentation workload, paper still in the process, and duplicate entry.'],
-    ['Compliance & accountability','Would your practice be ready if a regulator or payer asked questions tomorrow?','What we look at: policies, audits, documentation habits, and clear ownership of follow-up.']
-  ];
-  var btns = document.querySelectorAll('.assess-list button');
-  var num=document.getElementById('apNum'), title=document.getElementById('apTitle'), q=document.getElementById('apQ'), why=document.getElementById('apWhy'), bar=document.getElementById('apBar');
-  var panel = document.querySelector('.assess-panel'); var cur = 0;
-  function select(i){
-    if(i===cur && panel.dataset.init) return; cur=i; panel.dataset.init=1;
-    btns.forEach(function(b){ b.setAttribute('aria-selected', b.dataset.i==i); });
-    num.textContent = (i+1<10?'0':'')+(i+1); title.textContent=pts[i][0]; q.textContent=pts[i][1]; why.textContent=pts[i][2];
-    bar.style.width = ((i+1)*10)+'%';
-    [num,title,q,why].forEach(function(el){ el.classList.remove('ap-swap'); void el.offsetWidth; if(!reduce) el.classList.add('ap-swap'); });
-  }
-  btns.forEach(function(b){
-    b.addEventListener('click', function(){ select(+b.dataset.i); });
-    b.addEventListener('mouseenter', function(){ if(window.matchMedia('(hover:hover)').matches) select(+b.dataset.i); });
-  });
-  panel.dataset.init=1;
-  window.__selectPoint = select;
-
   // smooth FAQ
   document.querySelectorAll('details').forEach(function(d){
     var s=d.querySelector('summary'), a=d.querySelector('.ans');
@@ -141,14 +111,7 @@
       sendForm(cf, subject, { Name: cf.name.value, email: cf.email.value, Practice: cf.practice.value || '-', 'Interested in': interest, Message: cf.message.value || '-' }, showThanks(cf, 'contactThanks', 'contactError'));
     });
   }
-  var af = document.getElementById('assessForm');
-  if(af){
-    af.addEventListener('submit', function(e){
-      e.preventDefault();
-      if(!af.reportValidity()) return;
-      sendForm(af, '10-Point Assessment Request | Danielle & Co. website', { email: af.email.value, Request: 'Please send me the 10-Point Medical Practice Operations Assessment.' }, showThanks(af, 'assessThanks', 'assessError'));
-    });
-  }
+  window.__dlcoSend = sendForm; // used by assessment.js (interactive 1-minute assessment)
   // "Learn more" on a service card preselects that service in the form
   [].forEach.call(document.querySelectorAll('[data-interest]'), function(a){
     a.addEventListener('click', function(){ if(cf && cf.interest) cf.interest.value = a.dataset.interest; });

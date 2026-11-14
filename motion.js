@@ -124,7 +124,7 @@
      click, tap, or key press. Scroll/wheel alone does not count as interaction in most browsers.
      As the visitor scrolls, volume eases to silence by the third section and returns if they scroll back up.
      Muting with the toggle is saved in localStorage ('dlco-sound' = 'off') and auto-start is skipped. */
-  var SRC = 'audio/ambient-528hz-loop.mp3', KEY = 'dlco-sound', VOL = 0.12, FADE_IN = 5, FADE_OUT = 1.2;
+  var SRC = 'audio/clean-soul-loop.mp3', KEY = 'dlco-sound', VOL = 0.4, FADE_IN = 6, FADE_OUT = 1.2;
   var btn = document.createElement('button');
   btn.type = 'button'; btn.className = 'sound-toggle';
   btn.setAttribute('aria-pressed','false'); btn.setAttribute('aria-label','Play ambient sound');
