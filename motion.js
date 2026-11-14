@@ -131,6 +131,8 @@
   btn.innerHTML = '<span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="st-label">Sound</span><span class="st-state">Off</span>';
   document.body.appendChild(btn);
   var AC = window.AudioContext || window.webkitAudioContext;
+  // iPhone: let ambient sound play even when the ringer switch is on silent (iOS 17+)
+  try{ if(navigator.audioSession) navigator.audioSession.type = 'playback'; }catch(e){}
   var ctx = null, gain = null, scrollGain = null, source = null, bufferP = null, audioEl = null, playing = false, wanted = false;
   function setUI(on){
     playing = on;
@@ -168,14 +170,14 @@
       });
     }).catch(function(){ return false; });
   }
-  var GESTURES = ['pointerdown','keydown','touchend','touchstart','wheel','scroll'];
+  var GESTURES = ['pointerdown','mousedown','click','keydown','touchend','touchstart'];
   function onGesture(e){
     if(e && btn.contains(e.target)) return; // the toggle handles itself
     if(!wanted || playing) return disarm();
     if(ctx && ctx.state !== 'running') ctx.resume(); // must be called synchronously inside the gesture
     tryStart().then(function(ok){ if(ok) disarm(); });
   }
-  function arm(){ btn.querySelector('.st-state').textContent = 'On'; btn.setAttribute('aria-pressed','true'); btn.setAttribute('aria-label','Mute ambient sound'); GESTURES.forEach(function(ev){ window.addEventListener(ev, onGesture, { capture: true, passive: true }); }); btn.classList.add('is-armed'); }
+  function arm(){ btn.setAttribute('aria-label','Tap anywhere to play ambient sound'); GESTURES.forEach(function(ev){ window.addEventListener(ev, onGesture, { capture: true, passive: true }); }); btn.classList.add('is-armed'); }
   function disarm(){ GESTURES.forEach(function(ev){ window.removeEventListener(ev, onGesture, { capture: true, passive: true }); }); btn.classList.remove('is-armed'); }
   function mute(){
     wanted = false; disarm(); ramp(0, FADE_OUT); setUI(false); store('off');
