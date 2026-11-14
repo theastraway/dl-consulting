@@ -48,3 +48,7 @@ The site makes no health or healing claims about the audio; it is described only
 | File | Source | License |
 |---|---|---|
 | vendor/lenis.min.js | Lenis 1.1.13 smooth scroll by darkroom.engineering (https://github.com/darkroomengineering/lenis), self-hosted copy | MIT |
+
+| img/card-medical-calm.jpg | Services card II | AI-generated (Grok Bot), original | n/a |
+| img/card-spa-calm.jpg | Services card III | AI-generated (Grok Bot), original | n/a |
+| img/card-notebook-calm.jpg | Services card I | AI-generated (Grok Bot), original | n/a |
