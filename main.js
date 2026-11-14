@@ -107,23 +107,48 @@
     vids.forEach(function(v){ vio.observe(v); });
   }
 
-  // inquiries: compose an email to Danielle (works on any static host, no account)
-  var TO = 'daniellelamb20202@gmail.com';
-  function mail(subject, lines){ var u = 'mailto:' + TO + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(lines.join('\n')); window.location.href = u; }
+  // inquiries: forms post straight to Danielle's inbox through FormSubmit (no email app opens)
+  // FORM ALIAS: after Danielle clicks FormSubmit's one-time activation email, FormSubmit gives a
+  // random alias (e.g. https://formsubmit.co/ajax/a1b2c3d4e5...). Paste it below in place of the
+  // address so her email no longer appears anywhere in the site's code.
+  var FORM_ENDPOINT = 'https://formsubmit.co/ajax/daniellelamb20202@gmail.com';
+  function sendForm(form, subject, fields, onDone){
+    var btn = form.querySelector('button[type="submit"]');
+    var hp = form.querySelector('[name="_honey"]');
+    if(hp && hp.value){ onDone(true); return; } // bot: pretend success, send nothing
+    var payload = { _subject: subject, _template: 'table', _captcha: 'false', _honey: '' };
+    Object.keys(fields).forEach(function(k){ payload[k] = fields[k]; });
+    if(btn){ btn.setAttribute('aria-busy','true'); btn.dataset.label = btn.textContent; btn.textContent = 'Sending\u2026'; }
+    fetch(FORM_ENDPOINT, { method:'POST', headers:{ 'Content-Type':'application/json', 'Accept':'application/json' }, body: JSON.stringify(payload) })
+      .then(function(r){ return r.json().catch(function(){ return {}; }).then(function(j){ return r.ok && String(j.success) !== 'false'; }); })
+      .catch(function(){ return false; })
+      .then(function(ok){ if(btn){ btn.removeAttribute('aria-busy'); btn.textContent = btn.dataset.label; } onDone(ok); });
+  }
+  function showThanks(form, thanksId, errorId){
+    return function(ok){
+      var t = document.getElementById(thanksId), er = document.getElementById(errorId);
+      if(ok){ if(er) er.hidden = true; form.hidden = true; if(t){ t.hidden = false; t.focus({preventScroll:true}); } }
+      else if(er){ er.hidden = false; }
+    };
+  }
   var cf = document.getElementById('contact-form');
-  if(cf && cf.getAttribute('action').indexOf('mailto:') === 0){
+  if(cf){
     cf.addEventListener('submit', function(e){
       e.preventDefault();
-      if(cf.website && cf.website.value) return; // honeypot
       if(!cf.reportValidity()) return;
       var interest = cf.interest.value || 'Discovery Call';
-      var subject = (interest === 'Discovery Call' ? 'Discovery Call Request' : interest + ' Inquiry') + (cf.practice.value ? ' | ' + cf.practice.value : '');
-      mail(subject, ['Name: ' + cf.name.value, 'Email: ' + cf.email.value, 'Practice: ' + (cf.practice.value || '-'), 'Interested in: ' + interest, '', 'Message:', cf.message.value || '-', '', 'Sent from the Danielle & Co. website']);
+      var subject = (interest === 'Discovery Call' ? 'New Discovery Call Request' : 'New ' + interest + ' Inquiry') + (cf.practice.value ? ' | ' + cf.practice.value : '') + ' | Danielle & Co. website';
+      sendForm(cf, subject, { Name: cf.name.value, email: cf.email.value, Practice: cf.practice.value || '-', 'Interested in': interest, Message: cf.message.value || '-' }, showThanks(cf, 'contactThanks', 'contactError'));
     });
   }
   var af = document.getElementById('assessForm');
-  if(af){ af.addEventListener('submit', function(e){ e.preventDefault(); if(!af.reportValidity()) return;
-    mail('10-Point Assessment Request', ['Please send me the 10-Point Medical Practice Operations Assessment.', '', 'Email: ' + af.email.value, '', 'Sent from the Danielle & Co. website']); }); }
+  if(af){
+    af.addEventListener('submit', function(e){
+      e.preventDefault();
+      if(!af.reportValidity()) return;
+      sendForm(af, '10-Point Assessment Request | Danielle & Co. website', { email: af.email.value, Request: 'Please send me the 10-Point Medical Practice Operations Assessment.' }, showThanks(af, 'assessThanks', 'assessError'));
+    });
+  }
   // "Learn more" on a service card preselects that service in the form
   [].forEach.call(document.querySelectorAll('[data-interest]'), function(a){
     a.addEventListener('click', function(){ if(cf && cf.interest) cf.interest.value = a.dataset.interest; });
