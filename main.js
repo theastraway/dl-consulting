@@ -97,10 +97,22 @@
   function showThanks(form, thanksId, errorId){
     return function(ok){
       var t = document.getElementById(thanksId), er = document.getElementById(errorId);
-      if(ok){ if(er) er.hidden = true; form.hidden = true; if(t){ t.hidden = false; t.focus({preventScroll:true}); } }
+      if(ok){
+        if(er) er.hidden = true;
+        form.hidden = true;
+        if(t){
+          t.hidden = false;
+          t.focus({preventScroll:true});
+          var y = Math.max(0, t.getBoundingClientRect().top + window.scrollY - 140);
+          if(window.__lenis && window.__lenis.scrollTo) window.__lenis.scrollTo(y, { duration: 0.9 });
+          else window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+      }
       else if(er){ er.hidden = false; }
     };
   }
+  // Contact form: AJAX to FormSubmit so the visitor stays on the page (no reCAPTCHA, no redirect).
+  // Welcome email is sent from Danielle's Gmail by the bot, not by FormSubmit _autoresponse.
   var cf = document.getElementById('contact-form');
   if(cf){
     cf.addEventListener('submit', function(e){
@@ -108,10 +120,126 @@
       if(!cf.reportValidity()) return;
       var interest = cf.interest.value || 'Discovery Call';
       var subject = (interest === 'Discovery Call' ? 'New Discovery Call Request' : 'New ' + interest + ' Inquiry') + (cf.practice.value ? ' | ' + cf.practice.value : '') + ' | Danielle & Co. website';
-      sendForm(cf, subject, { Name: cf.name.value, email: cf.email.value, Practice: cf.practice.value || '-', 'Interested in': interest, Message: cf.message.value || '-' }, showThanks(cf, 'contactThanks', 'contactError'));
+      sendForm(cf, subject, {
+        name: cf.name.value,
+        Name: cf.name.value,
+        email: cf.email.value,
+        Practice: cf.practice.value || '-',
+        'Interested in': interest,
+        Message: cf.message.value || '-'
+      }, showThanks(cf, 'contactThanks', 'contactError'));
     });
   }
   window.__dlcoSend = sendForm; // used by assessment.js (interactive 1-minute assessment)
+
+  // Availability page: AJAX (Danielle receives the slots and chooses a time)
+  function formatSlotDate(iso){
+    if(!iso) return '';
+    var p = iso.split('-');
+    var d = new Date(+p[0], +p[1]-1, +p[2]);
+    return d.toLocaleDateString('en-US', { weekday:'long', month:'long', day:'numeric', year:'numeric' });
+  }
+  function formatTime(t){
+    if(!t) return '';
+    var hm = t.split(':'), h = +hm[0], m = hm[1] || '00', ap = h >= 12 ? 'PM' : 'AM';
+    h = h % 12 || 12;
+    return h + ':' + m + ' ' + ap;
+  }
+  function todayISO(){
+    var n = new Date();
+    return n.getFullYear() + '-' + String(n.getMonth()+1).padStart(2,'0') + '-' + String(n.getDate()).padStart(2,'0');
+  }
+  var SLOT_WINDOWS = '<option value="">Select a window</option>'
+    + '<option value="Morning (8–11 am)">Morning (8–11 am)</option>'
+    + '<option value="Midday (11 am–2 pm)">Midday (11 am–2 pm)</option>'
+    + '<option value="Afternoon (2–5 pm)">Afternoon (2–5 pm)</option>'
+    + '<option value="Evening (5–8 pm)">Evening (5–8 pm)</option>';
+  var af = document.getElementById('availability-form');
+  if(af){
+    var slotsWrap = document.getElementById('availSlots');
+    var addBtn = document.getElementById('addSlot');
+    function setDateMins(root){
+      var min = todayISO();
+      (root || af).querySelectorAll('input[type="date"]').forEach(function(inp){ inp.min = min; });
+    }
+    setDateMins();
+    function slotCount(){ return slotsWrap.querySelectorAll('.avail-slot').length; }
+    function relabel(){
+      [].forEach.call(slotsWrap.querySelectorAll('.avail-slot'), function(slot, i){
+        var n = i + 1;
+        slot.setAttribute('data-slot', String(n));
+        var lab = slot.querySelector('.avail-slot-label');
+        if(lab) lab.textContent = 'Option ' + n;
+        slot.querySelectorAll('[name]').forEach(function(el){
+          el.name = el.name.replace(/slot_\d+_/, 'slot_' + n + '_');
+
+        });
+        var rm = slot.querySelector('.avail-remove');
+        if(rm) rm.hidden = n <= 3;
+      });
+      if(addBtn) addBtn.hidden = slotCount() >= 8;
+    }
+    function makeSlot(n){
+      var slot = document.createElement('div');
+      slot.className = 'avail-slot';
+      slot.setAttribute('data-slot', String(n));
+      slot.innerHTML = '<div class="avail-slot-head"><span class="avail-slot-label">Option ' + n + '</span>'
+        + (n > 3 ? '<button type="button" class="avail-remove">Remove</button>' : '')
+        + '</div><div class="cf-row avail-row-3">'
+        + '<label><span>Date</span><input type="date" name="slot_' + n + '_date" data-part="date" required></label>'
+        + '<label><span>Time window</span><select name="slot_' + n + '_window" data-part="window" required>' + SLOT_WINDOWS + '</select></label>'
+        + '<label class="opt-label"><span>Preferred start <em>optional</em></span><input type="time" name="slot_' + n + '_time" data-part="time"></label>'
+        + '</div>';
+      return slot;
+    }
+    if(addBtn){
+      addBtn.addEventListener('click', function(){
+        var n = slotCount() + 1;
+        if(n > 8) return;
+        var slot = makeSlot(n);
+        slotsWrap.appendChild(slot);
+        setDateMins(slot);
+        relabel();
+        var first = slot.querySelector('input[type="date"]');
+        if(first) first.focus();
+      });
+    }
+    slotsWrap.addEventListener('click', function(e){
+      var btn = e.target.closest('.avail-remove');
+      if(!btn) return;
+      var slot = btn.closest('.avail-slot');
+      if(slot && slotCount() > 3){ slot.remove(); relabel(); }
+    });
+    af.addEventListener('submit', function(e){
+      e.preventDefault();
+      var er = document.getElementById('availError');
+      if(er) er.hidden = true;
+      if(!af.reportValidity()) return;
+      var options = [];
+      [].forEach.call(slotsWrap.querySelectorAll('.avail-slot'), function(slot){
+        var date = slot.querySelector('[data-part="date"]').value;
+        var win = slot.querySelector('[data-part="window"]').value;
+        var time = slot.querySelector('[data-part="time"]').value;
+        if(!date || !win) return;
+        var line = formatSlotDate(date) + ' · ' + win;
+        if(time) line += ' · prefers ' + formatTime(time);
+        options.push(line);
+      });
+      if(options.length < 3){
+        if(er){ er.hidden = false; er.textContent = 'Please share at least three days and times that work for you.'; }
+        return;
+      }
+      var fields = {
+        Name: af.name.value,
+        email: af.email.value,
+        Practice: af.practice.value || '-',
+        'Time zone': af.timezone.value,
+        Note: af.note.value || '-'
+      };
+      options.forEach(function(line, i){ fields['Option ' + (i + 1)] = line; });
+      sendForm(af, 'Availability for discovery call: ' + af.name.value, fields, showThanks(af, 'availThanks', 'availError'));
+    });
+  }
   // "Learn more" on a service card preselects that service in the form
   [].forEach.call(document.querySelectorAll('[data-interest]'), function(a){
     a.addEventListener('click', function(){ if(cf && cf.interest) cf.interest.value = a.dataset.interest; });

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Share your availability | Danielle &amp; Co.</title>
+<meta name="description" content="Share a few days and times for a complimentary 30-minute discovery call with Danielle &amp; Co. Consulting. Danielle will pick the time that fits best and send a Google Meet confirmation.">
+<link rel="canonical" href="https://daniellecoconsulting.com/availability.html">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-inner">
+<div class="loader" aria-hidden="true"><span>Danielle &amp; Co.</span></div>
+
+<header class="site-header" id="header">
+  <div class="wrap nav">
+    <a href="index.html#top" class="brand">Danielle &amp; Co.<small>Consulting</small></a>
+    <nav class="nav-links" id="navlinks" aria-label="Main">
+      <a href="index.html#services">Services</a>
+      <a href="index.html#wellbeing">Wellbeing</a>
+      <a href="index.html#who">Who We Help</a>
+      <a href="index.html#how">Approach</a>
+      <a href="index.html#assessment">Assessment</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact-form" class="nav-cta-mobile">Book a Discovery Call</a>
+    </nav>
+    <div class="nav-right">
+      <a href="index.html#contact-form" class="btn btn-ghost btn-sm"><span class="full">Book a Discovery Call</span><span class="short">Book a Call</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="avail-page" id="availability">
+    <div class="wrap avail-inner">
+      <span class="eyebrow gold reveal">Discovery Call</span>
+      <h1 class="reveal" style="--d:.1s">Share your availability</h1>
+      <p class="lede reveal" style="--d:.2s">Pick at least three days and times that work for you. Danielle will choose the one that fits best and send a confirmation with a Google Meet link.</p>
+
+      <form class="contact-form reveal" id="availability-form" style="--d:.3s" method="post" novalidate>
+        <div class="cf-row">
+          <label><span>Name</span><input type="text" name="name" required autocomplete="name"></label>
+          <label><span>Email</span><input type="email" name="email" required autocomplete="email"></label>
+        </div>
+        <label class="cf-full"><span>Practice or organization</span><input type="text" name="practice" autocomplete="organization"></label>
+
+        <label><span>Time zone</span>
+          <select name="timezone" required>
+            <option value="Eastern Time (America/New_York)" selected>Eastern Time (ET)</option>
+            <option value="Central Time (America/Chicago)">Central Time (CT)</option>
+            <option value="Mountain Time (America/Denver)">Mountain Time (MT)</option>
+            <option value="Arizona Time (America/Phoenix)">Arizona Time (no DST)</option>
+            <option value="Pacific Time (America/Los_Angeles)">Pacific Time (PT)</option>
+            <option value="Alaska Time (America/Anchorage)">Alaska Time (AKT)</option>
+            <option value="Hawaii Time (Pacific/Honolulu)">Hawaii Time (HT)</option>
+            <option value="Other (please mention in the note)">Other (please mention in the note)</option>
+          </select>
+        </label>
+        <p class="avail-hint">Times below are in the time zone you select.</p>
+
+        <div class="avail-slots" id="availSlots">
+          <div class="avail-slot" data-slot="1">
+            <div class="avail-slot-head"><span class="avail-slot-label">Option 1</span></div>
+            <div class="cf-row avail-row-3">
+              <label><span>Date</span><input type="date" name="slot_1_date" data-part="date" required></label>
+              <label><span>Time window</span>
+                <select name="slot_1_window" data-part="window" required>
+                  <option value="">Select a window</option>
+                  <option value="Morning (8–11 am)">Morning (8–11 am)</option>
+                  <option value="Midday (11 am–2 pm)">Midday (11 am–2 pm)</option>
+                  <option value="Afternoon (2–5 pm)">Afternoon (2–5 pm)</option>
+                  <option value="Evening (5–8 pm)">Evening (5–8 pm)</option>
+                </select>
+              </label>
+              <label class="opt-label"><span>Preferred start <em>optional</em></span><input type="time" name="slot_1_time" data-part="time"></label>
+            </div>
+          </div>
+          <div class="avail-slot" data-slot="2">
+            <div class="avail-slot-head"><span class="avail-slot-label">Option 2</span></div>
+            <div class="cf-row avail-row-3">
+              <label><span>Date</span><input type="date" name="slot_2_date" data-part="date" required></label>
+              <label><span>Time window</span>
+                <select name="slot_2_window" data-part="window" required>
+                  <option value="">Select a window</option>
+                  <option value="Morning (8–11 am)">Morning (8–11 am)</option>
+                  <option value="Midday (11 am–2 pm)">Midday (11 am–2 pm)</option>
+                  <option value="Afternoon (2–5 pm)">Afternoon (2–5 pm)</option>
+                  <option value="Evening (5–8 pm)">Evening (5–8 pm)</option>
+                </select>
+              </label>
+              <label class="opt-label"><span>Preferred start <em>optional</em></span><input type="time" name="slot_2_time" data-part="time"></label>
+            </div>
+          </div>
+          <div class="avail-slot" data-slot="3">
+            <div class="avail-slot-head"><span class="avail-slot-label">Option 3</span></div>
+            <div class="cf-row avail-row-3">
+              <label><span>Date</span><input type="date" name="slot_3_date" data-part="date" required></label>
+              <label><span>Time window</span>
+                <select name="slot_3_window" data-part="window" required>
+                  <option value="">Select a window</option>
+                  <option value="Morning (8–11 am)">Morning (8–11 am)</option>
+                  <option value="Midday (11 am–2 pm)">Midday (11 am–2 pm)</option>
+                  <option value="Afternoon (2–5 pm)">Afternoon (2–5 pm)</option>
+                  <option value="Evening (5–8 pm)">Evening (5–8 pm)</option>
+                </select>
+              </label>
+              <label class="opt-label"><span>Preferred start <em>optional</em></span><input type="time" name="slot_3_time" data-part="time"></label>
+            </div>
+          </div>
+        </div>
+        <button class="avail-add" type="button" id="addSlot">+ Add another time</button>
+
+        <label class="cf-full"><span>A note for Danielle <em style="font-style:normal;letter-spacing:.1em;color:rgba(251,248,242,.45);text-transform:none">optional</em></span><textarea name="note" rows="3"></textarea></label>
+        <input type="text" name="_honey" class="cf-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="btn btn-light" type="submit">Send my availability</button>
+        <p class="form-error" id="availError" hidden role="alert">Something went wrong sending your availability. Please try again in a moment.</p>
+        <p class="cf-note">Danielle will pick a time and you&rsquo;ll get a confirmation with a Google Meet link.</p>
+      </form>
+      <div class="form-thanks cf-thanks" id="availThanks" hidden tabindex="-1"><span class="ft-mark">&#10022;</span><h4>Thank you!</h4><p>Danielle will pick a time and you&rsquo;ll get a confirmation with a Google Meet link.</p></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="brand big">Danielle &amp; Co.<small>Consulting</small></div>
+      <p>Holistic operations management for growing businesses, with a specialty in independent practices, physician groups, and multi-location healthcare organizations. New York, NY &middot; Working nationwide.</p>
+    </div>
+    <div class="foot-grid">
+      <div><h5>Explore</h5><ul><li><a href="index.html#services">Services</a></li><li><a href="index.html#wellbeing">Culture &amp; Wellbeing</a></li><li><a href="index.html#who">Who We Help</a></li><li><a href="index.html#how">Approach</a></li><li><a href="index.html#about">About Danielle</a></li></ul></div>
+      <div><h5>Resources</h5><ul><li><a href="index.html#assessment">The 1-Minute Assessment</a></li><li><a href="index.html#faq">FAQ</a></li></ul></div>
+      <div><h5>Connect</h5><ul><li><a href="index.html#contact-form">Book a Discovery Call</a></li><!-- Add LinkedIn and Instagram here once the company profile URLs are confirmed. --></ul></div>
+    </div>
+    <div class="foot-bottom"><span>&copy; 2026 Danielle &amp; Co. Consulting</span><span>Privacy &middot; Terms</span></div>
+    <p class="music-credit">Music: &ldquo;Clean Soul&rdquo; Kevin MacLeod (<a href="https://incompetech.com" target="_blank" rel="noopener">incompetech.com</a>), licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>.</p>
+  </div>
+</footer>
+<script src="vendor/lenis.min.js" defer></script>
+<script src="main.js" defer></script>
+<script src="motion.js" defer></script>
+</body>
+</html>
